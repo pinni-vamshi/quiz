@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>Quiz</title>
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+    $("#b1").click(function(){
+        $(".rb").show();
+        $(".rb").attr("disabled",true);
+
+
+    });
+    });
+
+
+        
+    </script>
+
+
+</head>
+<body>
+<div>
+    <h1>quiz</h1>
+    <hr>
+    <div>
+        {% for question in  questions %}
+
+
+
+
+        <div id = "options">
+        	
+
+        	 <table>
+
+            <tr>
+                <td class="text-primary">{{question.id}} ) {{question}} </td>
+            </tr>
+            <tr>
+                <td><input type = "radio"  name = {{question.id}} id="option1" value="{{question.option1}}">{{question.option1}}</td>
+            </tr>
+            <tr>
+                <td><input type = "radio"  name = {{question.id}} id="option2" value="{{question.option2}}">{{question.option2}}</td>
+            </tr>
+            <tr>
+                <td><input type = "radio"  name = {{question.id}} id="option3" value="{{question.option3}}">{{question.option3}}</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" name = {{question.id}} id="option4" value="{{question.option4}}">{{question.option4}}</td>
+            </tr>
+
+            <tr>
+                <td><label id="correct_option" class= "rb" style="display:none ; color : green"><b>{{question.correct_option}}</b></label></td>
+            </tr>
+
+        </table>
+
+
+        </div>
+
+
+
+
+
+
+       
+<hr>
+
+        {% endfor %}
+
+
+        <input type="submit" class="btn btn-success" value="Submit" id="b1" >
+        <br>
+       
+
+
+        </div>
+</div>
+
+</body>
+</html>
+
+
+
+
